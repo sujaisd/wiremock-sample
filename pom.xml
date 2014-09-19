@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>WireMock</name>
     <groupId>wiremock</groupId>
     <artifactId>wiremock</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <inceptionYear>2013</inceptionYear>
     <description>Wiremock application</description>
     <url>http://wiremock.com</url>
@@ -19,7 +17,8 @@
     <scm>
         <url>https://github.com/sujaisd/wiremock-sample.git</url>
         <developerConnection>scm:git:[fetch=]https://github.com/sujaisd/wiremock-sample.git[push=]git@github.com:sujaisd/wiremock-sample.git</developerConnection>
-    </scm>
+      <tag>v1.0.0</tag>
+  </scm>
     
     <contributors>
         <contributor>

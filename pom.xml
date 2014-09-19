@@ -4,7 +4,7 @@
     <name>WireMock</name>
     <groupId>wiremock</groupId>
     <artifactId>wiremock</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0-SNAPSHOT</version>
     <inceptionYear>2013</inceptionYear>
     <description>Wiremock application</description>
     <url>http://wiremock.com</url>
@@ -17,7 +17,7 @@
     <scm>
         <url>https://github.com/sujaisd/wiremock-sample.git</url>
         <developerConnection>scm:git:[fetch=]https://github.com/sujaisd/wiremock-sample.git[push=]git@github.com:sujaisd/wiremock-sample.git</developerConnection>
-      <tag>v1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
     
     <contributors>

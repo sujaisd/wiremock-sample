@@ -6,7 +6,7 @@
     <name>WireMock</name>
     <groupId>wiremock</groupId>
     <artifactId>wiremock</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <inceptionYear>2013</inceptionYear>
     <description>Wiremock application</description>
     <url>http://wiremock.com</url>
@@ -18,6 +18,7 @@
     </issueManagement>
     <scm>
         <url>https://github.com/sujaisd/wiremock-sample.git</url>
+        <developerConnection>scm:git:[fetch=]https://github.com/sujaisd/wiremock-sample.git[push=]git@github.com:sujaisd/wiremock-sample.git</developerConnection>
     </scm>
     
     <contributors>
@@ -152,7 +153,7 @@
                         <totalLineRate>85</totalLineRate>
                         <packageLineRate>85</packageLineRate>
                         <packageBranchRate>100</packageBranchRate>
-<!--                        <regexes>
+                        <!--                        <regexes>
                             <regex>
                                 <pattern>com.example.reallyimportant.*</pattern>
                                 <branchRate>90</branchRate>
@@ -175,6 +176,13 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+    
         </plugins>
     </build>
 </project>

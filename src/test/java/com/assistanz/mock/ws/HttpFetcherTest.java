@@ -32,6 +32,8 @@ public class HttpFetcherTest {
         
         stubFor(get(urlEqualTo("/")).willReturn(
                 aResponse().withStatus(200).withHeader("Content-Type", "application/json").withBodyFile("get.json")));
+        stubFor(get(urlEqualTo("/v2")).willReturn(
+                aResponse().withStatus(200).withHeader("Content-Type", "application/json").withBodyFile("v2/get.json")));
     }
 
     @Test
@@ -64,9 +66,19 @@ public class HttpFetcherTest {
         Versions versions = apiServer.getVersions();
         assertNotNull(versions);
         // Should have 2 versions
-        assertEquals(versions.size(), 2);
+        assertEquals(2, versions.size());
         //First version should have id v2.0
         Version firstVersion = versions.get(0);
-        assertEquals(firstVersion.getId(), "v2.0");
+        assertEquals("v2.0", firstVersion.getId());
+    }
+    
+    @Test
+    public void getVersion() throws Exception {
+        HttpFetcher apiServer = new HttpFetcher("http://localhost:18089/");
+        Version version = apiServer.getVersion("v2");
+        //Should not be null
+        assertNotNull(version);
+        //Sould contain version id v2.0
+        assertEquals("v2.0", version.getId());
     }
 }

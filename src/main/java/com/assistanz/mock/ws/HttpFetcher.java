@@ -41,6 +41,26 @@ public class HttpFetcher {
         //Returnt the converted Versions list
         return versionsResponse.getVersions();
     }
+    
+    /**
+     * Gets a specific version which is specified.
+     * 
+     * @param location short name of the version
+     * @return
+     * @throws ClientProtocolException
+     * @throws IOException 
+     */
+    public Version getVersion(String location) throws ClientProtocolException, IOException {
+        //Form the url from the url and location
+        String connectionURL = url + location;
+        //Use the URL to connect, response will be a JSON string
+        String response = Request.Get(connectionURL).execute().returnContent().toString();
+        // convert JSON to Version object
+        Gson gson = new GsonBuilder().create();
+        VersionsResponse versionResponse = gson.fromJson(response, VersionsResponse.class);
+        // return the version object
+        return versionResponse.getVersion();
+    }
 
     public String fetchAsString(String url) throws ClientProtocolException, IOException {
         return Request.Get(url).execute().returnContent().toString();

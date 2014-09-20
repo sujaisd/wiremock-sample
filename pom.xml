@@ -23,6 +23,19 @@
         <tag>HEAD</tag>
     </scm>
     
+    <distributionManagement>
+        <repository>
+            <id>HOME</id>
+            <name>HOME-releases</name>
+            <url>http://localhost:8081/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>HOME</id>
+            <name>HOME-snapshots</name>
+            <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
     <contributors>
         <contributor>
             <name>Dev 1</name>

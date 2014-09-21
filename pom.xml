@@ -20,7 +20,7 @@
     <scm>
         <url>https://github.com/sujaisd/wiremock-sample.git</url>
         <developerConnection>scm:git:[fetch=]https://github.com/sujaisd/wiremock-sample.git[push=]git@github.com:sujaisd/wiremock-sample.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>master</tag>
     </scm>
     
     <distributionManagement>

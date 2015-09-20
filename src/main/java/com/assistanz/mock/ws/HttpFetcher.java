@@ -7,6 +7,11 @@ import org.apache.http.client.fluent.Request;
 
 import java.io.IOException;
 
+/**
+ * Fetches Remote Http URL information as text/object.
+ * 
+ * @author sujaisd
+ */
 public class HttpFetcher {
 
     /**
@@ -18,7 +23,7 @@ public class HttpFetcher {
      * Initializes the connection between server for the given URL. The same
      * connection will be used across all the other activities.
      *
-     * @param url
+     * @param url URL for the resource to connect.
      */
     public HttpFetcher(String url) {
         this.url = url;
@@ -29,8 +34,8 @@ public class HttpFetcher {
      *
      * @return list from web service.
      *
-     * @throws org.apache.http.client.ClientProtocolException
-     * @throws java.io.IOException
+     * @throws org.apache.http.client.ClientProtocolException When protocol standard fails.
+     * @throws java.io.IOException When connectivity fails.
      */
     public Versions getVersions() throws ClientProtocolException, IOException {
         //Get the content from the URL (should be JSON)
@@ -46,9 +51,9 @@ public class HttpFetcher {
      * Gets a specific version which is specified.
      * 
      * @param location short name of the version
-     * @return
-     * @throws ClientProtocolException
-     * @throws IOException 
+     * @return version associated to the location.
+     * @throws ClientProtocolException When protocol standard fails.
+     * @throws IOException When connectivity fails.
      */
     public Version getVersion(String location) throws ClientProtocolException, IOException {
         //Form the url from the url and location
@@ -62,6 +67,14 @@ public class HttpFetcher {
         return versionResponse.getVersion();
     }
 
+    /**
+     * Fetch the data as a String.
+     * 
+     * @param url URL to connect.
+     * @return data or body of the response.
+     * @throws ClientProtocolException when connection fails.
+     * @throws IOException when connection fails.
+     */
     public String fetchAsString(String url) throws ClientProtocolException, IOException {
         return Request.Get(url).execute().returnContent().toString();
     }

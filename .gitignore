@@ -1,2 +1,3 @@
 /wiremock.iml
 /target/
+.gradle/
